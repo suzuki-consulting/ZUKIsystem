@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>specification</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(85, 85, 85); background-color: white; overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(126, 126, 126); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: black; }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(126, 126, 126); border-color: rgb(214, 214, 214); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(214, 214, 214); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(214, 214, 214); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(3, 3, 3); background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(245, 245, 245); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(3, 3, 3); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(214, 214, 214) rgb(214, 214, 214) rgb(199, 199, 199); border-image: initial; background-color: rgb(240, 240, 240); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher {
+  background-color: #777;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: white;
+  color: #555;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .gutter {
+  color: #555;
+  background: white;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #e87b00;
+}
+pre.editor-colors .invisible {
+  color: #555;
+}
+pre.editor-colors .selection .region {
+  background-color: #e1e1e1;
+}
+pre.editor-colors .bracket-matcher .region {
+  background-color: #C9C9C9;
+  opacity: .7;
+  border-bottom: 0 none;
+}
+pre.editor-colors.is-focused .cursor {
+  border-color: black;
+}
+pre.editor-colors.is-focused .selection .region {
+  background-color: #afc4da;
+}
+pre.editor-colors.is-focused .line-number.cursor-line-no-selection,
+pre.editor-colors.is-focused .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}
+pre.editor-colors .syntax--source.syntax--gfm {
+  color: #444;
+}
+pre.editor-colors .syntax--gfm .syntax--markup.syntax--heading {
+  color: #111;
+}
+pre.editor-colors .syntax--gfm .syntax--link {
+  color: #888;
+}
+pre.editor-colors .syntax--gfm .syntax--variable.syntax--list {
+  color: #888;
+}
+pre.editor-colors .syntax--markdown .syntax--paragraph {
+  color: #444;
+}
+pre.editor-colors .syntax--markdown .syntax--heading {
+  color: #111;
+}
+pre.editor-colors .syntax--markdown .syntax--link {
+  color: #888;
+}
+pre.editor-colors .syntax--markdown .syntax--link .syntax--string {
+  color: #888;
+}
+.syntax--comment {
+  color: #999988;
+  font-style: italic;
+}
+.syntax--string {
+  color: #D14;
+}
+.syntax--string .syntax--source,
+.syntax--string .syntax--meta.syntax--embedded.syntax--line {
+  color: #5A5A5A;
+}
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded {
+  color: #920B2D;
+}
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded .syntax--source {
+  color: #920B2D;
+}
+.syntax--constant.syntax--numeric {
+  color: #D14;
+}
+.syntax--constant.syntax--language {
+  color: #606aa1;
+}
+.syntax--constant.syntax--character,
+.syntax--constant.syntax--other {
+  color: #606aa1;
+}
+.syntax--constant.syntax--symbol {
+  color: #990073;
+}
+.syntax--constant.syntax--numeric.syntax--line-number.syntax--find-in-files .syntax--match {
+  color: rgba(143, 190, 0, 0.63);
+}
+.syntax--variable {
+  color: #008080;
+}
+.syntax--variable.syntax--parameter {
+  color: #606aa1;
+}
+.syntax--keyword {
+  color: #222;
+  font-weight: bold;
+}
+.syntax--keyword.syntax--unit {
+  color: #445588;
+}
+.syntax--keyword.syntax--special-method {
+  color: #0086B3;
+}
+.syntax--storage {
+  color: #222;
+}
+.syntax--storage.syntax--type {
+  color: #222;
+}
+.syntax--entity.syntax--name.syntax--class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #900;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #008080;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #458;
+  font-weight: bold;
+}
+.syntax--entity.syntax--name.syntax--filename.syntax--find-in-files {
+  color: #E6DB74;
+}
+.syntax--support.syntax--constant,
+.syntax--support.syntax--function,
+.syntax--support.syntax--type {
+  color: #458;
+}
+.syntax--support.syntax--class {
+  color: #008080;
+}
+.syntax--invalid {
+  color: #F8F8F0;
+  background-color: #00A8C6;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #F8F8F0;
+  background-color: #8FBE00;
+}
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json,
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json .syntax--punctuation.syntax--string {
+  color: #000080;
+}
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json {
+  color: #d14;
+}
+.syntax--meta.syntax--diff,
+.syntax--meta.syntax--diff.syntax--header {
+  color: #75715E;
+}
+.syntax--css.syntax--support.syntax--property-name {
+  font-weight: bold;
+  color: #333;
+}
+.syntax--css.syntax--constant {
+  color: #099;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="-">設計仕様</h1>
+<h2 id="1-">1　初めに</h2>
+<p>ＺＵＫＩシステムの設計に必要な内容を以下に記す。</p>
+<h2 id="2-">2　共通関数、サブルーチン</h2>
+<h3 id="2-1-">2.1 システム制御</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SetOfcn</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">StartOfProcess</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">アプリ開始時の処理</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">EndOfProcess</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">アプリ終了時の処理</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">GetStartData</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">アプリ起動時の初期値設定：アカウント情報、消費税率<br>StartOfProcessから呼ばれる</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">GetConsumptionTaxRate</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">消費税率の設定</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SetShippingCondition</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">出荷時の条件（<a href="#システム定数">システム定数</a>）設定処理</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SearchFolder</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">「フォルダを選択する」ダイアログボックスを開いてフォルダパスを取得する<br>(参照ダイアログボックス使用)  2010/07/17 pPoy</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">SearchFile</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">「ファイルを開く」ダイアログボックスで、ファイルのフルパスを取得する<br>(参照ダイアログボックス使用) 2010/07/17 pPoy</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">SearchPictureFile</td>
+<td style="text-align:left">stInitialFileName As String</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">「ファイルを開く」ダイアログボックスで、ファイルのフルパスを取得する<br>(参照ダイアログボックス使用) 2010/07/17 pPoy</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">ExGetExt</td>
+<td style="text-align:left">sfina As String</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">ExportToExcel</td>
+<td style="text-align:left">frm As Form</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">'現在、未使用　20170114</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">ExportTableToExcel</td>
+<td style="text-align:left">WorkTableName, strSheetName</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">　</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">ControlOption</td>
+<td style="text-align:left">lngID</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-2-">2.2 メッセージ制御</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">MsgOfDebug</td>
+<td style="text-align:left">comMsg</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">TransactionMsg</td>
+<td style="text-align:left">comMsg, AddContent</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">　</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-3-">2.3 デバッグ機能</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">GC</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">MsgBox "ガベージコレクションが完了しました"</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SetLog</td>
+<td style="text-align:left">intLevel As Integer, Description As String</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">MsgboxAndSetErrLog</td>
+<td style="text-align:left">strDescription As String</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">LogClear</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SQLMsg</td>
+<td style="text-align:left">strSQLA As String</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">DataTableClear</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">「tbl0002データ版数管理」の「初期設定対象」がYseに対応する実テーブルを初期設定する。</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">ExportTables</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">全ワークkテーブルを既定のフォルダ"\テーブル\ZUKIテーブル_v3_00_00.accdb"にエクスポート</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-4-">2.4 データチェック</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CountRecords_Table</td>
+<td style="text-align:left">TableName</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CountRecords_WorkTable</td>
+<td style="text-align:left">WorkTableName</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CountRecords_WorkTable_Wherecond</td>
+<td style="text-align:left">WorkTableName, strWhereCond</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CountRecords_Table_Wherecond</td>
+<td style="text-align:left">TableName, strWhereCond</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">結果：レコード数、"0"または"-1”</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CheckOfRecordExistance</td>
+<td style="text-align:left">TableName, KeyFiled1, KeyValue1, KeyFiled2, KeyValue2</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">条件と合致するレコードの有無チェック（重複レコードチェックの目的）</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">SyncCheckState_Sub</td>
+<td style="text-align:left">SubTableName, KeyField, KeyValue, StateID</td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">KeyFieldの値KeyValueが同じすべての明細レコードが同一の状況IDの場合、trueを返す。トランザクション処理化が必要</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CheckOfExistance_Null_Wherecond</td>
+<td style="text-align:left">WorkTableName, strField, strWhereCond</td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">FieldにNullのレコードが存在する場合はTrueを返す。</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CheckOfExistance_Zero_Wherecond</td>
+<td style="text-align:left">WorkTableName, strField, strWhereCond</td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">FieldにZeroのレコードが存在する場合はTrueを返す。</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CheckOfExistance_Null</td>
+<td style="text-align:left">WorkTableName, strField</td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">FieldにNullのレコードが存在する場合はTrueを返す。</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">ConvertOfNullParam</td>
+<td style="text-align:left">strField</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">　</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-5-">2.5 データ計算</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">Summation</td>
+<td style="text-align:left">WorkTableName, QueryName As String, ObjectItem As String, MainID As Long</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">Multiplication</td>
+<td style="text-align:left">WorkTableName, strField As Variant, KeyField1 As Variant, KeyField2 As Variant</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-7-">2.7 データ設定</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">SetData_Wherecond</td>
+<td style="text-align:left">TableName, strField, varValue, strWhereCond</td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">strWhereCondで指定する全レコードに、varValueで指定された値をstrFieldで指定されたフィールドに設定する</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SetData_Work_Wherecond</td>
+<td style="text-align:left">WorkTableName, strField, varValue, strWhereCond</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">ワークテーブルのstrWhereCondで指定する全レコードに、varValueで指定された値をFieldで指定されたフィールドに設定する</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SetData_Work_All</td>
+<td style="text-align:left">WorkTableName, strField, varValue</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">ワークテーブルの全レコードに対し、指定フィールドに指定された値を設定する</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">SetData_MainAndSub</td>
+<td style="text-align:left">MainTableName, SubTableName, strField, varValue, KeyField, KeyValue</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">　</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">SetLineNo_Work_Plural</td>
+<td style="text-align:left">MainWorkTableName, SubWorkTableName, strKeyField, strLineNoField</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">　</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-8-">2.8 データ更新</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">UpdateData_Plural_Conditioned</td>
+<td style="text-align:left">WorkTableName, TableName, strField, KeyField</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">両テーブルのKeyField（重複なし）の値が一致しているレコードに対し、ワークテーブルのField値をテーブルのFieldに設定する。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-9-">2.9 データ抽出</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GetData_Wherecond</td>
+<td style="text-align:left">TableName, strField, strWhereCond</td>
+<td style="text-align:left">strFieldの値</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">条件式（strWhereCond）の最初のレコードのstrFieldの値を出力する。該当値がNullの場合または対象レコードがない場合は""を返す</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GetData_Work_Wherecond</td>
+<td style="text-align:left">WorkTableName, strField, strWhereCond</td>
+<td style="text-align:left">strFieldの値</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">条件式（strWhereCond）の最初のレコードのstrFieldの値を出力する。該当値がNullの場合または対象レコードがない場合は""を返す</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GetMaxValue_Work_Wherecond</td>
+<td style="text-align:left">WorkTableName, strField, strWhereCond</td>
+<td style="text-align:left">strFieldの値</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">条件式（strWhereCond）のレコードのうち、strFieldの最大値を出力する。該当値がNullの場合または対象レコードがない場合は""を返す</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-10-">2.10 テーブル複写</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CopyToWorkTable</td>
+<td style="text-align:left">TableName, WorkTableName</td>
+<td style="text-align:left">True/False<br> RecordNumberIsZero</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CopyToTable</td>
+<td style="text-align:left">WorkTableName, TableName</td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">　</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CopyWorkTable</td>
+<td style="text-align:left">WorkTableNameIn, WorkTableNameOut</td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">　</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-11-">2.11 レコード更新</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">UpdateRecords_Conditioned</td>
+<td style="text-align:left">WorkTableName, TableName, KeyFieldMain, KeyField, KeyValue</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">条件(KeyFieldの値＝KeyValue)に合致したすべてのレコードに対し、KeyFieldMainが同じレコードを更新する。【注意】処理FLGはリセットされる。</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">UpdateRecord_MainAndSub</td>
+<td style="text-align:left">MainWorkTableName, MainTableName, SubWorkTableName, SubTableName, MainKeyField As String, SubmainKeyField As String, SubKeyField As String, MainKeyValue As Variant</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">条件に合致した親子レコードを更新する。各KeyFieldは管理ID、管理明細IDであり、SubMainKeyFieldはMain/Subの連携IDである。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-12-">2.12 レコード削除</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">DeleteRecords_WhereCond</td>
+<td style="text-align:left">TableName, strWherecond</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">WhereCond条件で指定されるレコード消去</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">DeleteRecords_Work_WhereCond</td>
+<td style="text-align:left">WorkTableName, strWherecond</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">ワークテーブルWorkTableNameのWhereCond条件で指定されるレコード消去</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">DeleteRecords_Work_All</td>
+<td style="text-align:left">WorkTableName</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">ワークテーブルWorkTableNameの全レコード消去</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-13-">2.13 レコード追加</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">AddRecordAndSetMaxMainAndSub</td>
+<td style="text-align:left">TableName, KeyFieldMain, KeyFieldSub</td>
+<td style="text-align:left">True/False<br>lngMaxMain,lngMaxSub</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">KeyFieldMainおよびKeyFieldSubの最大値を抽出し、追加した新しいレコードにカウントアップ値（＋１）を設定する。KeyFieldはオートナンバリング型、非オートナンバリングとも可</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">AddRecordAndSetMax</td>
+<td style="text-align:left">TableName, KeyField</td>
+<td style="text-align:left">True/False<br>lngMax</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">KeyFieldの最大値を抽出し、追加した新しいレコードにカウントアップ値（＋１）を設定する。KeyFieldはオートナンバリング型、非オートナンバリングとも可</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">AddRecordAndSetMax_plusWork_AndSetData</td>
+<td style="text-align:left">TableName, WorkTableName, KeyField, strField, varValue</td>
+<td style="text-align:left">True/False<br>lngMax</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">TableNameのKeyFieldの最大値を抽出し、追加した新しいレコードにカウントアップ値（＋１）を設定する（AddRecordAndSetMax）と共に、WorkTableNameにはレコード追加、キー値（lngMax）設定、指定値varValueのフィールドstrFieldへの設定をおこなう</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">AddRecords</td>
+<td style="text-align:left">WorkTableName, TableName, KeyField</td>
+<td style="text-align:left">True/False<br>lngMax</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">WorkTableNameのすべてのレコードを追加登録する。KeyFieldで指定する主キーはカウントアップされる。</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">AddRecord_Work_AndSetData</td>
+<td style="text-align:left">WorkTableName, strField, varValue</td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">WorkTableNameに1レコードを追加し、指定値varValueをフィールドstrFieldに設定する</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-14-">2.14 レコード複写</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CopyRecords_ConditionedByNvarchar</td>
+<td style="text-align:left">TableName, WorkTableName, KeyField, KeyValue As String</td>
+<td style="text-align:left">RecordNumberIsZero</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">KeyValueは全角可変文字列、ワールドカード使用</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CopyRecords_WhereCond</td>
+<td style="text-align:left">TableName, WorkTableName, strWhereCond</td>
+<td style="text-align:left">RecordNumberIsZero</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CopyRecords_Work_WhereCond</td>
+<td style="text-align:left">WorkTableNameIn, WorkTableNameOut, strWhereCond</td>
+<td style="text-align:left">RecordNumberIsZero</td>
+<td style="text-align:center">×</td>
+<td style="text-align:left">コピー先（WorkTableNameOut）をクリアした後、コピー元（WorkTableNameIn）から、条件に合うレコードのみをコピー。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-15-sql-">2.15 SQL文作成</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CreateSQLParamPart_Dot</td>
+<td style="text-align:left">KeyField, varKeyValue</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">　</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-">3 個別関数、サブルーチン</h2>
+<h3 id="3-1-">3.1 受注処理</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GenerateSingle_ReceivedOrderFromQuotation</td>
+<td style="text-align:left">CustomerOrderID</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【５a】</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GenerateSingle_Work_PurchaseOrderFromReceivedOrder</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【５b】</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">ImportEDIData_ReceivedOrder</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【】</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-2-">3.2 計画生産</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GeneratePlural_ReceivedOrderFromProductPlanning</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【２a】画面から入力されている子（tbl0201w受注明細）から親（tbl0200w受注）を生成</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">Generate_ProductPlanningLine</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【２aa】画面から入力されているtbl0251w計画生産明細からtbl0251計画生産明細を生成</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-3-">3.3 部材調達</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GenerateSingle_Work_PurchaseOrderFromBOM</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【５c】<br>Implicit引数：部品調達明細番号:lngSubID、受注明細番号:lngOrderSubID</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GenerateSingle_Work_ManufacturingOrderFromBOM</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【６】<br>Implicit引数：lngOrderSubID（受注明細番号）、lngSubID（部品調達明細番号）</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">Generate_ReceivedOrderFromMaterialLine</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【】画面から入力されている部材製造手配用tbl0201w受注明細からtbl0201受注明細を生成</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-4-">3.4 作業指示</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">Generate_MfgInstAndSubConOrder_FromLine</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">True/False</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">【２b】指定された受注明細番号（lngOrederSubID）のtbl0301製造依頼工程（内作および外作）に対し、新しい製造指示番号および外注依頼番号を付与し設定する。<br>Implicit引数：lngOrderSubID（受注明細番号）</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">CopyRecords_ManufactureIndicationAndManufactureProcess_plusRelatedReceivedOrderLine</td>
+<td style="text-align:left">StateID</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">状況IDの製造指示および製造指示明細を抽出コピー。さらに対応する受注明細をコピー。</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">Create_tbl0405_Calender</td>
+<td style="text-align:left">strDate</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">SetCalenderForManufactureProcess_TimeSerial</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">Create_tbl0404_TimeSeries</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">SetTimeSerialManufactureProcess</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">Integrate_tbl0405</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">SetTimeSerialManufactureProcessBy??????</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">Create_tbl0401_ProcessTitle</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">　</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-5-">3.5 外注依頼</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-6-">3.6 購入依頼</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GeneratePlural_PurchaseOrderFromLine</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【２d】未処理のtbl0601購入依頼明細から親tbl0600購入依頼を作成　（購入先、送付先、納期日でグループ化）</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">ExportEDIData_PurchaseOrder</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【】</td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SetValue_PurchaseOrderWork_NumberToName</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">SetValue_PurchaseOrderLineWork_NumberToName</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">　</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-7-">3.7 在庫管理</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">CalOfInventoryUpToDate</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">CalOfInventory0630_TimeSeries</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sub</td>
+<td style="text-align:left">Create_tbl0635_Calender</td>
+<td style="text-align:left">strDate As String</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">　</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-8-">3.8 支払書</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GenerateSingle_PaymentLineFromPurchaseOrderLine</td>
+<td style="text-align:left">SubID As Long</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【３c】SubIDで指定された購入品明細レコードを支払明細テーブルにコピーし、（購入品および）購入品明細レコードの支払状況を２に設定する</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GeneratePlural_PaymentFromLine</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【２f】</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-9-">3.9 出荷処理</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GeneratePlural_ShippingFromReceivedOrder</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【５b】状況ID＝5の受注レコードを出荷テーブルにコピーし、かつ受注明細も出荷明細にコピーし、受注および受注明細の状況IDを6に設定する</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-10-">3.10 請求書</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　名　称　</th>
+<th style="text-align:left">引　数　</th>
+<th style="text-align:left">戻り値、出力データ　</th>
+<th style="text-align:center">Tran性</th>
+<th style="text-align:left">　説　明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GeneratePlural_InvoiceLineFromShippingLine</td>
+<td style="text-align:left">MainID As Long</td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【３b】MainID（出荷番号）で指定された出荷明細レコードを請求明細テーブルにコピーする</td>
+</tr>
+<tr>
+<td style="text-align:center">Func</td>
+<td style="text-align:left">GeneratePlural_InvoiceFromLine</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">【２e】</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-">4　共通定義</h2>
+<h3 id="4-1-global-">4.1 Global変数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　　内　容　</th>
+<th style="text-align:left">　説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strConnectionString</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strFullPathDataSource</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDBType</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strProvider</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDriver</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strServer</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strPath</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDataSource</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strPort</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strUserID</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strPassword</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strImagePath</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDataVersion</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDataVersion_Old</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDataVersion_New</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDataPath</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDataFile</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strPictureFullPath</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strPicturePath</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strPictureFile</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngCnOpenError</td>
+<td style="text-align:left">As Long</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">KeyF</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngMax</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngMaxMain</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngMaxSub</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngCount</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">idx</td>
+<td style="text-align:left">As Long</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">RecordNumberIsZero</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strOption1</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strWhereCond</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strmsg</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">TableName</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">MainTableName</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">SubTableName</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">WorkTableName</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">MainWorkTableName</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">SubWorkTableName</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">WorkTableNameIn</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">WorkTableNameOut</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">WorkTableNameInD</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">WorkTableNameOutD</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">QueryName</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strMainIDName</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strField</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">KeyField</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">KeyFieldMain</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">KeyFieldSub</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">KeyFieldIn</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">KeyFieldOut</td>
+<td style="text-align:left">As String</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngValue</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">varValue</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">KeyValue</td>
+<td style="text-align:left">As Long</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">varKeyValue</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSheetName</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strTitle</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQL</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLEnable</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLEnableIn</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLEnableOut</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLIn</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLOut</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLInD</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLOutD</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngLogInNo</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strLogInName</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strStaffName</td>
+<td style="text-align:left">担当者名</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngMainID</td>
+<td style="text-align:left">管理ID</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngSubID</td>
+<td style="text-align:left">管理明細ID</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngSpecifiedMainID</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngQuotationID</td>
+<td style="text-align:left">見積番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngQuotationSubID</td>
+<td style="text-align:left">見積明細番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngOrderID</td>
+<td style="text-align:left">受注番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngOrderSubID</td>
+<td style="text-align:left">受注明細番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strCustomerQuotationID</td>
+<td style="text-align:left">顧客見積番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strCustomerOrderID</td>
+<td style="text-align:left">顧客注文番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngShippingID</td>
+<td style="text-align:left">出荷番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngShippingSubID</td>
+<td style="text-align:left">出荷明細番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngBillID</td>
+<td style="text-align:left">請求番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngBillSubID</td>
+<td style="text-align:left">請求明細番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngProcessID</td>
+<td style="text-align:left">工程ID</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngProductCategoryID</td>
+<td style="text-align:left">製品部材区分</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngProductID</td>
+<td style="text-align:left">品目番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngPurchaseID</td>
+<td style="text-align:left">購入品番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngManufacturingID</td>
+<td style="text-align:left">現在未使用20160106</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngMaterialID</td>
+<td style="text-align:left">材料番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngWarehouseID</td>
+<td style="text-align:left">倉庫番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strWarehouseName</td>
+<td style="text-align:left">倉庫名</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngStockID As Long</td>
+<td style="text-align:left">在庫管理番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngPurchaseCategory</td>
+<td style="text-align:left">購入品区分</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngTreatmentID</td>
+<td style="text-align:left">手配区分</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strPurchaseOrderID</td>
+<td style="text-align:left">購入費用負担区分</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngStateID</td>
+<td style="text-align:left">現在未使用20160106</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngQuantity</td>
+<td style="text-align:left">数量</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">varUnit</td>
+<td style="text-align:left">単位</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strUnit</td>
+<td style="text-align:left">単位</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngConsumptionTaxRate As Single</td>
+<td style="text-align:left">消費税率</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngCustomerNo</td>
+<td style="text-align:left">顧客番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strCustomerCode</td>
+<td style="text-align:left">顧客コード</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strCustomerName</td>
+<td style="text-align:left">顧客名</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strCustomerStaffName</td>
+<td style="text-align:left">顧客担当者名</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngSubconID</td>
+<td style="text-align:left">依頼先番号、購入先番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngDestinationNo</td>
+<td style="text-align:left">出荷先番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDestinationCode</td>
+<td style="text-align:left">出荷先コード</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDestinationName</td>
+<td style="text-align:left">出荷先名</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDestinationStaffName</td>
+<td style="text-align:left">出荷先担当者名</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngHinmokuID</td>
+<td style="text-align:left">品目番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strHINMEI</td>
+<td style="text-align:left">品目名、品目名</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strHINBAN</td>
+<td style="text-align:left">品目品番</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLSubItems</td>
+<td style="text-align:left">現在未使用20160106</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strSQLSubItemsWithTableName</td>
+<td style="text-align:left">現在未使用20160106</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngOptionID</td>
+<td style="text-align:left">オプション名称ID</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">dateToday</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">dateIssueDate</td>
+<td style="text-align:left">発行日</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">dateOrderDate</td>
+<td style="text-align:left">受注日</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">dateCutoffDate</td>
+<td style="text-align:left">締日</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">dateCustomerDueDate</td>
+<td style="text-align:left">顧客要求納入日</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">dateDueDate</td>
+<td style="text-align:left">納期日</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">dateShippingDate</td>
+<td style="text-align:left">納品日、出荷日</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDeliveryCond</td>
+<td style="text-align:left">納入条件</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strPaymentCond</td>
+<td style="text-align:left">支払条件</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strDeliveryPalce</td>
+<td style="text-align:left">受渡場所</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strValidityPeriod</td>
+<td style="text-align:left">見積有効期限</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strRemark</td>
+<td style="text-align:left">記事</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strOfficeCode</td>
+<td style="text-align:left">事業所コード</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strOfficeName</td>
+<td style="text-align:left">事業所名</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strProcessParam</td>
+<td style="text-align:left">処理パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strProcessParam_StockManagement</td>
+<td style="text-align:left">在庫管理　処理パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strProcessParam_Master</td>
+<td style="text-align:left">マスター管理　処理パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngID</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strFileName</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngParam</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngParam1</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngParam2</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strParam3</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strParam</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strParam1</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">strParam2</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">dateParam</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">varParam</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">varNull</td>
+<td style="text-align:left">汎用パラメータ</td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngLeftPosition</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngTopPosition</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngRed</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngBlack</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngYellow</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Global</td>
+<td style="text-align:left">lngWhite</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-2-public-">4.2 Public定数</h3>
+<h4 id="4-2-1-">4.2.1 メッセージ用</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　　内　容　</th>
+<th style="text-align:left">　説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0001</td>
+<td style="text-align:left">登録しました。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0002</td>
+<td style="text-align:left">削除しました。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0003</td>
+<td style="text-align:left">内容が変更されています。閉じる前に変更しますか？</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0004</td>
+<td style="text-align:left">マスタを削除するとあらゆる処理で障害が発生しますがよろしいですか？</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0005</td>
+<td style="text-align:left">削除してよろしいですか？</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0006</td>
+<td style="text-align:left">該当するデータはありません &amp; vbCrLf &amp; vbCrLf</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0007</td>
+<td style="text-align:left">これ以前のコードはありません</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0008</td>
+<td style="text-align:left">これ以降のコードはありません</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0009</td>
+<td style="text-align:left">内容が変更されています。印刷前に登録しますか？</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0010</td>
+<td style="text-align:left">内容が変更されています。新規データに移動する前に登録しますか？</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0011</td>
+<td style="text-align:left">内容が変更されています。前データへ移動する前に登録しますか？</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0012</td>
+<td style="text-align:left">内容が変更されています。後データに移動する前に登録しますか？</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0013</td>
+<td style="text-align:left">処理を中止しました。同時操作で競合している可能性があります。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0014</td>
+<td style="text-align:left">エラー発生処理は完了していません</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0015</td>
+<td style="text-align:left">障害発生データは登録できませんでした</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0016</td>
+<td style="text-align:left">障害発生データは削除できませんでした</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0050</td>
+<td style="text-align:left">データが重複しています。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0051</td>
+<td style="text-align:left">更新不可のデータです。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0052</td>
+<td style="text-align:left">削除不可のデータです。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0053</td>
+<td style="text-align:left">データ入力が必要です。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0054</td>
+<td style="text-align:left">入力データが異常です。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0055</td>
+<td style="text-align:left">処理を中止しました。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0056</td>
+<td style="text-align:left">日付の順序が異常です。正しい値を入力してください。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0057</td>
+<td style="text-align:left">内容が登録されていません。終了してよろしいですか？</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0058</td>
+<td style="text-align:left">条件設定が必要です。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0059</td>
+<td style="text-align:left">処理を中止しました。運用者に連絡してください。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0060</td>
+<td style="text-align:left">処理しました。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0061</td>
+<td style="text-align:left">登録可能数を超えています。追加はできません。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0062</td>
+<td style="text-align:left">追加不可のデータです。</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg0999</td>
+<td style="text-align:left">　</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsg1000</td>
+<td style="text-align:left">デバッグ</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsgTittle1</td>
+<td style="text-align:left">確認</td>
+</tr>
+<tr>
+<td style="text-align:center">Public Const</td>
+<td style="text-align:left">comMsgTittle2</td>
+<td style="text-align:left">エラー</td>
+</tr>
+</tbody>
+</table>
+<p><a name="システム定数"></a></p>
+<h4 id="4-2-2-">4.2.2 システム定数</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">種類</th>
+<th style="text-align:left">　　　内　容　</th>
+<th style="text-align:left">　説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">Admin_FLG</td>
+<td style="text-align:left">0=一般モード<br> 1=管理者モード（状況IDに依らず各種伝票の変更が可能）</td>
+</tr>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">Com_FLG</td>
+<td style="text-align:left">0=基本システム開発（全機能）</td>
+</tr>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">CS_FLG</td>
+<td style="text-align:left">0=運用 <br>  1=試験</td>
+</tr>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">ERRLog_FLG</td>
+<td style="text-align:left">0=エラーログ収集停止<br> 1=エラーログ収集中</td>
+</tr>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">GCMode_FLG</td>
+<td style="text-align:left">0=終了時ガベージコレクション非適用<br>  1=終了時ガベージコレクション適用</td>
+</tr>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">lngOfficeNo</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">Log_FLG</td>
+<td style="text-align:left">0=ログ収集停止<br> 1=レベル１のログ収集中<br>  2=レベル２のログ収集中<br>   3=レベル３のログ収集中</td>
+</tr>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">MDE_FLG</td>
+<td style="text-align:left">0=MDBファイル <br> 1=MDEファイル</td>
+</tr>
+<tr>
+<td style="text-align:center">Global Const</td>
+<td style="text-align:left">SQL_FLG</td>
+<td style="text-align:left">0=SQLメッセージの表示停止<br> 1=SQLメッセージの表示</td>
+</tr>
+</tbody>
+</table>
+<h1 id="appendix">Appendix</h1>
+<p><a name="システム権限"></a></p>
+<h2 id="-">システム権限</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">設定値</th>
+<th style="text-align:left">　　権　限　内　容　</th>
+<th style="text-align:left">　適　用　例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">１</td>
+<td style="text-align:left">全機能使用可能</td>
+<td style="text-align:left">システム管理者</td>
+</tr>
+<tr>
+<td style="text-align:center">２</td>
+<td style="text-align:left">業務管理者機能および一般機能が使用可能</td>
+<td style="text-align:left">業務管理者</td>
+</tr>
+<tr>
+<td style="text-align:center">３</td>
+<td style="text-align:left">一般機能のみ使用可能</td>
+<td style="text-align:left">業務担当者</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-">機能リスト</h2>
+<h3 id="-">システム管理者機能</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">機能群</th>
+<th style="text-align:left">　　　　機　能　内　容　</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">オプション</td>
+<td style="text-align:left">事業所管理<br>担当者管理<br>工程管理<br>単位管理<br>システム管理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">業務管理者機能</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">機能群</th>
+<th style="text-align:left">　　　　機　能　内　容　</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">マスタ管理</td>
+<td style="text-align:left">取引先管理（販売先、出荷先、購入先、加工先）<br>品目管理（商品、製造品、購入品、在庫品）<br>倉庫管理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">一般機能</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">機能群</th>
+<th style="text-align:left">　　　　機　能　内　容　</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">計画生産</td>
+<td style="text-align:left">計画生産作成<br>計画生産一覧　製造手配</td>
+</tr>
+<tr>
+<td style="text-align:center">見積受注</td>
+<td style="text-align:left">見積作成<br>見積一覧<br>見積結果入力<br>受注作成<br>受注一覧<br>受注品手配</td>
+</tr>
+<tr>
+<td style="text-align:center">製造管理</td>
+<td style="text-align:left">製造手配作成<br>製造手配一覧<br>作業指示作成<br>作業指示一覧<br>外注依頼作成<br>外注依頼一覧<br>部材調達作成<br>部材調達一覧<br>製造完了</td>
+</tr>
+<tr>
+<td style="text-align:center">出荷管理</td>
+<td style="text-align:left">出荷伝票作成<br>出荷一覧<br>出荷処理</td>
+</tr>
+<tr>
+<td style="text-align:center">請求管理</td>
+<td style="text-align:left">請求書作成<br>請求書一覧<br>売掛管理</td>
+</tr>
+<tr>
+<td style="text-align:center">在庫管理</td>
+<td style="text-align:left">在庫一覧<br>棚卸処理</td>
+</tr>
+<tr>
+<td style="text-align:center">購買管理</td>
+<td style="text-align:left">購入依頼明細　新規登録<br>購入依頼作成／購入依頼明細更新<br>購入依頼書一覧<br>受入処理<br>検品処理</td>
+</tr>
+<tr>
+<td style="text-align:center">支払管理</td>
+<td style="text-align:left">支払書作成<br>支払書一覧、発行・更新<br>買掛管理</td>
+</tr>
+<tr>
+<td style="text-align:center">集計処理</td>
+<td style="text-align:left">受注集計<br>売上集計</td>
+</tr>
+</tbody>
+</table></body>
+</html>
