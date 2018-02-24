@@ -4,7 +4,7 @@
 ## 2　共通関数、サブルーチン
 ### 2.1 システム制御
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Sub |SetOfcn|||||
 |Sub |StartOfProcess||||アプリ開始時の処理|
@@ -22,12 +22,12 @@
 
 ### 2.2 メッセージ制御
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |MsgOfDebug|comMsg||||
 |Sub |TransactionMsg|comMsg, AddContent|||　|
 ### 2.3 デバッグ機能
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Sub |GC|||| MsgBox "ガベージコレクションが完了しました"|
 |Sub |SetLog|intLevel As Integer, Description As String||||
@@ -39,7 +39,7 @@
 
 ### 2.4 データチェック
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　| 戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |CountRecords_Table|TableName||×||
 |Func |CountRecords_WorkTable|WorkTableName||×||
@@ -54,14 +54,14 @@
 
 ### 2.5 データ計算
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　| 戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Sub |Summation|WorkTableName, QueryName As String, ObjectItem As String, MainID As Long||×||
 |Sub |Multiplication|WorkTableName, strField As Variant, KeyField1 As Variant, KeyField2 As Variant||×||
 
 ### 2.7 データ設定
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |SetData_Wherecond|TableName, strField, varValue, strWhereCond|True/False|×|strWhereCondで指定する全レコードに、varValueで指定された値をstrFieldで指定されたフィールドに設定する|
 |Sub |SetData_Work_Wherecond|WorkTableName, strField, varValue, strWhereCond||×|ワークテーブルのstrWhereCondで指定する全レコードに、varValueで指定された値をFieldで指定されたフィールドに設定する|
@@ -71,35 +71,35 @@
 
 ### 2.8 データ更新
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |UpdateData_Plural_Conditioned|WorkTableName, TableName, strField, KeyField||○|両テーブルのKeyField（重複なし）の値が一致しているレコードに対し、ワークテーブルのField値をテーブルのFieldに設定する。
 
 ### 2.9 データ抽出
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |GetData_Wherecond|TableName, strField, strWhereCond|strFieldの値|×|条件式（strWhereCond）の最初のレコードのstrFieldの値を出力する。該当値がNullの場合または対象レコードがない場合は""を返す|
 |Func |GetData_Work_Wherecond|WorkTableName, strField, strWhereCond|strFieldの値|×|条件式（strWhereCond）の最初のレコードのstrFieldの値を出力する。該当値がNullの場合または対象レコードがない場合は""を返す|
 |Func |GetMaxValue_Work_Wherecond|WorkTableName, strField, strWhereCond|strFieldの値|×|条件式（strWhereCond）のレコードのうち、strFieldの最大値を出力する。該当値がNullの場合または対象レコードがない場合は""を返す|
 ### 2.10 テーブル複写
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
-|Func |CopyToWorkTable|TableName, WorkTableName||○||
-|Func |CopyToTable|WorkTableName, TableName||○|　|
-|Func |CopyWorkTable|WorkTableNameIn, WorkTableNameOut||×|　|
+|Func |CopyToWorkTable|TableName, WorkTableName|True/False<br>RecordNumberIsZero|○||
+|Func |CopyToTable|WorkTableName, TableName|True/False|○|　|
+|Func |CopyWorkTable|WorkTableNameIn, WorkTableNameOut|True/False|×|　|
 
 ### 2.11 レコード更新
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |UpdateRecords_Conditioned|WorkTableName, TableName, KeyFieldMain, KeyField, KeyValue||○|条件(KeyFieldの値＝KeyValue)に合致したすべてのレコードに対し、KeyFieldMainが同じレコードを更新する。【注意】処理FLGはリセットされる。|
 |Func |UpdateRecord_MainAndSub|MainWorkTableName, MainTableName, SubWorkTableName, SubTableName, MainKeyField As String, SubmainKeyField As String, SubKeyField As String, MainKeyValue As Variant||○|条件に合致した親子レコードを更新する。各KeyFieldは管理ID、管理明細IDであり、SubMainKeyFieldはMain/Subの連携IDである。|
 
 ### 2.12 レコード削除
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Sub |DeleteRecords_WhereCond|TableName, strWherecond||×|WhereCond条件で指定されるレコード消去|
 |Sub |DeleteRecords_Work_WhereCond|WorkTableName, strWherecond||×|ワークテーブルWorkTableNameのWhereCond条件で指定されるレコード消去|
@@ -117,7 +117,7 @@
 
 ### 2.14 レコード複写
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |CopyRecords_ConditionedByNvarchar|TableName, WorkTableName, KeyField, KeyValue As String|RecordNumberIsZero|○|KeyValueは全角可変文字列、ワールドカード使用|
 |Func |CopyRecords_WhereCond|TableName, WorkTableName, strWhereCond|RecordNumberIsZero|×||
@@ -125,33 +125,33 @@
 
 ### 2.15 SQL文作成
 
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |CreateSQLParamPart_Dot|KeyField, varKeyValue|||　|
 
 ## 3 個別関数、サブルーチン
 ### 3.1 受注処理
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |GenerateSingle_ReceivedOrderFromQuotation|CustomerOrderID|||【５a】|
 |Func |GenerateSingle_Work_PurchaseOrderFromReceivedOrder||||【５b】|
 |Func |ImportEDIData_ReceivedOrder||||【】|
 
 ### 3.2 計画生産
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |GeneratePlural_ReceivedOrderFromProductPlanning||||【２a】画面から入力されている子（tbl0201w受注明細）から親（tbl0200w受注）を生成|
 |Func |Generate_ProductPlanningLine||||【２aa】画面から入力されているtbl0251w計画生産明細からtbl0251計画生産明細を生成|
 
 ### 3.3 部材調達
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |GenerateSingle_Work_PurchaseOrderFromBOM||||【５c】<br>Implicit引数：部品調達明細番号:lngSubID、受注明細番号:lngOrderSubID|
 |Func |GenerateSingle_Work_ManufacturingOrderFromBOM||||【６】<br>Implicit引数：lngOrderSubID（受注明細番号）、lngSubID（部品調達明細番号）|
 |Func |Generate_ReceivedOrderFromMaterialLine||||【】画面から入力されている部材製造手配用tbl0201w受注明細からtbl0201受注明細を生成|
 
 ### 3.4 作業指示
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func|Generate_MfgInstAndSubConOrder_FromLine||True/False|○|【２b】指定された受注明細番号（lngOrederSubID）のtbl0301製造依頼工程（内作および外作）に対し、新しい製造指示番号および外注依頼番号を付与し設定する。<br>Implicit引数：lngOrderSubID（受注明細番号）|
 |Func |CopyRecords_ManufactureIndicationAndManufactureProcess_plusRelatedReceivedOrderLine|StateID||| 状況IDの製造指示および製造指示明細を抽出コピー。さらに対応する受注明細をコピー。|
@@ -161,10 +161,10 @@
 |Sub| Create_tbl0401_ProcessTitle||||　|
 
 ### 3.5 外注依頼
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 ### 3.6 購入依頼
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |GeneratePlural_PurchaseOrderFromLine||||【２d】未処理のtbl0601購入依頼明細から親tbl0600購入依頼を作成　（購入先、送付先、納期日でグループ化）|
 |Func |ExportEDIData_PurchaseOrder||||【】|
@@ -172,25 +172,25 @@
 |Sub |SetValue_PurchaseOrderLineWork_NumberToName||||　|
 
 ### 3.7 在庫管理
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Sub |CalOfInventoryUpToDate|||||
 |Sub |CalOfInventory0630_TimeSeries|||||
 |Sub |Create_tbl0635_Calender|strDate As String|||　|
 
 ### 3.8 支払書
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　| 戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |GenerateSingle_PaymentLineFromPurchaseOrderLine|SubID As Long|||【３c】SubIDで指定された購入品明細レコードを支払明細テーブルにコピーし、（購入品および）購入品明細レコードの支払状況を２に設定する|
 |Func |GeneratePlural_PaymentFromLine||||【２f】
 
 ### 3.9 出荷処理
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |GeneratePlural_ShippingFromReceivedOrder||||【５b】状況ID＝5の受注レコードを出荷テーブルにコピーし、かつ受注明細も出荷明細にコピーし、受注および受注明細の状況IDを6に設定する|
 
 ### 3.10 請求書
-| 種類 | 　　名　称　| 引　数　| 戻り値　| Tran性|　説　明 |
+| 種類 | 　　名　称　| 引　数　|  戻り値、出力データ　| Tran性|　説　明 |
 |:-----------:|:-----------|:-----------|:-----------|:-----------:|:-----------|
 |Func |GeneratePlural_InvoiceLineFromShippingLine|MainID As Long|||【３b】MainID（出荷番号）で指定された出荷明細レコードを請求明細テーブルにコピーする|
 |Func |GeneratePlural_InvoiceFromLine||||【２e】|
