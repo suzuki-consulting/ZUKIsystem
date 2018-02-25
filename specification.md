@@ -327,6 +327,7 @@
 |Global| strProcessParam    |処理パラメータ
 |Global| strProcessParam_StockManagement|        在庫管理　処理パラメータ
 |Global| strProcessParam_Master|        マスター管理　処理パラメータ|
+|Global| varEDIProcess As Variant|         EDI処理
 |Global| lngID||
 |Global| strFileName||
 |Global| lngParam                 |汎用パラメータ
