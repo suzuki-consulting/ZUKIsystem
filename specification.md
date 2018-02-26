@@ -196,156 +196,156 @@
 |Func |GeneratePlural_InvoiceFromLine||||【２e】|
 
 ## 4　共通定義
-### 4.1 Global変数
+### 4.1 Public変数
 | 種類 | 　　　内　容　| 　説明 |
 |:-----------:|:-----------|:-----------|
-|Global| strConnectionString| |
-|Global| strFullPathDataSource| |
-|Global| strDBType||
-|Global| strProvider||
-|Global| strDriver||
-|Global| strServer||
-|Global| strPath| As String
-|Global |strDataSource| As String
-|Global |strPort| As String
-|Global| strUserID| As String
-|Global| strPassword| As String
-|Global| strImagePath| As String
-|Global| strDataVersion| As String
-|Global| strDataVersion_Old| As String
-|Global| strDataVersion_New| As String
-|Global| strDataPath| As String
-|Global| strDataFile |As String
-|Global| strPictureFullPath| As String
-|Global| strPicturePath| As String
-|Global| strPictureFile| As String|
-|Global| lngCnOpenError| As Long|
-|Global| KeyF| |
-|Global| lngMax|
-|Global| lngMaxMain|
-|Global| lngMaxSub|
-|Global| lngCount|
-|Global| idx| As Long|
-|Global| RecordNumberIsZero||
-|Global| strOption1|
-|Global| strWhereCond|
-|Global| strmsg|
-|Global| TableName| As String|
-|Global| MainTableName| As String|
-|Global| SubTableName| As String|
-|Global| WorkTableName| As String|
-|Global| MainWorkTableName| As String|
-|Global| SubWorkTableName| As String|
-|Global| WorkTableNameIn| As String|
-|Global| WorkTableNameOut| As String|
-|Global| WorkTableNameInD |As String|
-|Global| WorkTableNameOutD |As String|
-|Global| QueryName| As String|
-|Global| strMainIDName|    
-|Global| strField|
-|Global| KeyField| As String|
-|Global| KeyFieldMain| As String|
-|Global| KeyFieldSub| As String|
-|Global| KeyFieldIn| As String|
-|Global| KeyFieldOut| As String|
-|Global| lngValue |
-|Global| varValue |
-|Global| KeyValue| As Long|
-|Global| varKeyValue|
-|Global| strSheetName|
-|Global| strTitle|
-|Global| strSQL|
-|Global| strSQLEnable|
-|Global| strSQLEnableIn |
-|Global| strSQLEnableOut|
-|Global| strSQLIn|
-|Global| strSQLOut|
-|Global| strSQLInD |
-|Global| strSQLOutD|
-|Global| lngLogInNo |
-|Global| strLogInName|
-|Global| strStaffName |           担当者名|
-|Global| lngMainID                 |管理ID
-|Global| lngSubID                 |管理明細ID
-|Global| lngSpecifiedMainID ||
-|Global| lngQuotationID             |見積番号|
-|Global| lngQuotationSubID             |見積明細番号|
-|Global| lngOrderID             |受注番号
-|Global| lngOrderSubID           |受注明細番号
-|Global| strCustomerQuotationID    |顧客見積番号|
-|Global| strCustomerOrderID    |顧客注文番号|
-|Global| lngShippingID             |出荷番号
-|Global| lngShippingSubID|        出荷明細番号|
-|Global| lngBillID|               請求番号|
-|Global| lngBillSubID|            請求明細番号|
-|Global| lngProcessID              |工程ID|
-|Global| lngProductCategoryID    |製品部材区分
-|Global| lngProductID             |品目番号
-|Global| lngPurchaseID            |購入品番号
-|Global| lngManufacturingID      |現在未使用20160106
-|Global| lngMaterialID             |材料番号
-|Global| lngWarehouseID           |倉庫番号
-|Global| strWarehouseName       |倉庫名
-|Global| lngStockID As Long               |在庫管理番号
-|Global| lngPurchaseCategory    |購入品区分
-|Global| lngTreatmentID           |手配区分
-|Global| strPurchaseOrderID     |購入費用負担区分
-|Global| lngStateID            |現在未使用20160106|
-|Global| lngQuantity           |数量|
-|Global| varUnit              |単位
-|Global| strUnit                |単位
-|Global| lngConsumptionTaxRate As Single  |消費税率|
-|Global| lngCustomerNo             |顧客番号
-|Global| strCustomerCode        |顧客コード
-|Global| strCustomerName         |顧客名
-|Global| strCustomerStaffName   |顧客担当者名|
-|Global| lngSubconID|依頼先番号、購入先番号
-|Global| lngDestinationNo          |出荷先番号
-|Global| strDestinationCode      |出荷先コード
-|Global| strDestinationName      |出荷先名
-|Global| strDestinationStaffName|     出荷先担当者名|
-|Global| lngHinmokuID          |品目番号
-|Global| strHINMEI             |品目名、品目名
-|Global| strHINBAN             |品目品番
-|Global| strSQLSubItems        |現在未使用20160106
-|Global| strSQLSubItemsWithTableName      |現在未使用20160106|
-|Global| lngOptionID             |オプション名称ID
-|Global| dateToday||
-|Global| dateIssueDate |発行日
-|Global| dateOrderDate            |受注日
-|Global| dateCutoffDate          |締日
-|Global| dateCustomerDueDate     |顧客要求納入日
-|Global| dateDueDate              |納期日
-|Global| dateShippingDate         |納品日、出荷日|
-|Global| strDeliveryCond|納入条件
-|Global| strPaymentCond|支払条件
-|Global| strDeliveryPalce|受渡場所
-|Global| strValidityPeriod|見積有効期限
-|Global| strRemark                        |記事|
-|Global| strOfficeCode         |事業所コード
-|Global| strOfficeName        |事業所名|
-|Global| strProcessParam    |処理パラメータ
-|Global| strProcessParam_StockManagement|        在庫管理　処理パラメータ
-|Global| strProcessParam_Master|        マスター管理　処理パラメータ|
-|Global| varEDIProcess As Variant|         EDI処理
-|Global| lngID||
-|Global| strFileName||
-|Global| lngParam                 |汎用パラメータ
-|Global| lngParam1               |汎用パラメータ
-|Global| lngParam2               |汎用パラメータ
-|Global| strParam3              |汎用パラメータ
-|Global| strParam             |汎用パラメータ
-|Global| strParam1           |汎用パラメータ
-|Global| strParam2           |汎用パラメータ
-|Global| dateParam               |汎用パラメータ
-|Global| varParam             |汎用パラメータ
-|Global| varNull           |汎用パラメータ|
-|Global| lngLeftPosition||
-|Global| lngTopPosition||
-|Global| lngRed||
-|Global| lngBlack||
-|Global| lngYellow||
-|Global| lngWhite||
+|Public| strConnectionString| |
+|Public| strFullPathDataSource| |
+|Public| strDBType||
+|Public| strProvider||
+|Public| strDriver||
+|Public| strServer||
+|Public| strPath| As String
+|Public |strDataSource| As String
+|Public |strPort| As String
+|Public| strUserID| As String
+|Public| strPassword| As String
+|Public| strImagePath| As String
+|Public| strDataVersion| As String
+|Public| strDataVersion_Old| As String
+|Public| strDataVersion_New| As String
+|Public| strDataPath| As String
+|Public| strDataFile |As String
+|Public| strPictureFullPath| As String
+|Public| strPicturePath| As String
+|Public| strPictureFile| As String|
+|Public| lngCnOpenError| As Long|
+|Public| KeyF| |
+|Public| lngMax|
+|Public| lngMaxMain|
+|Public| lngMaxSub|
+|Public| lngCount|
+|Public| idx| As Long|
+|Public| RecordNumberIsZero||
+|Public| strOption1|
+|Public| strWhereCond|
+|Public| strmsg|
+|Public| TableName| As String|
+|Public| MainTableName| As String|
+|Public| SubTableName| As String|
+|Public| WorkTableName| As String|
+|Public| MainWorkTableName| As String|
+|Public| SubWorkTableName| As String|
+|Public| WorkTableNameIn| As String|
+|Public| WorkTableNameOut| As String|
+|Public| WorkTableNameInD |As String|
+|Public| WorkTableNameOutD |As String|
+|Public| QueryName| As String|
+|Public| strMainIDName|    
+|Public| strField|
+|Public| KeyField| As String|
+|Public| KeyFieldMain| As String|
+|Public| KeyFieldSub| As String|
+|Public| KeyFieldIn| As String|
+|Public| KeyFieldOut| As String|
+|Public| lngValue |
+|Public| varValue |
+|Public| KeyValue| As Long|
+|Public| varKeyValue|
+|Public| strSheetName|
+|Public| strTitle|
+|Public| strSQL|
+|Public| strSQLEnable|
+|Public| strSQLEnableIn |
+|Public| strSQLEnableOut|
+|Public| strSQLIn|
+|Public| strSQLOut|
+|Public| strSQLInD |
+|Public| strSQLOutD|
+|Public| lngLogInNo |
+|Public| strLogInName|
+|Public| strStaffName |           担当者名|
+|Public| lngMainID                 |管理ID
+|Public| lngSubID                 |管理明細ID
+|Public| lngSpecifiedMainID ||
+|Public| lngQuotationID             |見積番号|
+|Public| lngQuotationSubID             |見積明細番号|
+|Public| lngOrderID             |受注番号
+|Public| lngOrderSubID           |受注明細番号
+|Public| strCustomerQuotationID    |顧客見積番号|
+|Public| strCustomerOrderID    |顧客注文番号|
+|Public| lngShippingID             |出荷番号
+|Public| lngShippingSubID|        出荷明細番号|
+|Public| lngBillID|               請求番号|
+|Public| lngBillSubID|            請求明細番号|
+|Public| lngProcessID              |工程ID|
+|Public| lngProductCategoryID    |製品部材区分
+|Public| lngProductID             |品目番号
+|Public| lngPurchaseID            |購入品番号
+|Public| lngManufacturingID      |現在未使用20160106
+|Public| lngMaterialID             |材料番号
+|Public| lngWarehouseID           |倉庫番号
+|Public| strWarehouseName       |倉庫名
+|Public| lngStockID As Long               |在庫管理番号
+|Public| lngPurchaseCategory    |購入品区分
+|Public| lngTreatmentID           |手配区分
+|Public| strPurchaseOrderID     |購入費用負担区分
+|Public| lngStateID            |現在未使用20160106|
+|Public| lngQuantity           |数量|
+|Public| varUnit              |単位
+|Public| strUnit                |単位
+|Public| lngConsumptionTaxRate As Single  |消費税率|
+|Public| lngCustomerNo             |顧客番号
+|Public| strCustomerCode        |顧客コード
+|Public| strCustomerName         |顧客名
+|Public| strCustomerStaffName   |顧客担当者名|
+|Public| lngSubconID|依頼先番号、購入先番号
+|Public| lngDestinationNo          |出荷先番号
+|Public| strDestinationCode      |出荷先コード
+|Public| strDestinationName      |出荷先名
+|Public| strDestinationStaffName|     出荷先担当者名|
+|Public| lngHinmokuID          |品目番号
+|Public| strHINMEI             |品目名、品目名
+|Public| strHINBAN             |品目品番
+|Public| strSQLSubItems        |現在未使用20160106
+|Public| strSQLSubItemsWithTableName      |現在未使用20160106|
+|Public| lngOptionID             |オプション名称ID
+|Public| dateToday||
+|Public| dateIssueDate |発行日
+|Public| dateOrderDate            |受注日
+|Public| dateCutoffDate          |締日
+|Public| dateCustomerDueDate     |顧客要求納入日
+|Public| dateDueDate              |納期日
+|Public| dateShippingDate         |納品日、出荷日|
+|Public| strDeliveryCond|納入条件
+|Public| strPaymentCond|支払条件
+|Public| strDeliveryPalce|受渡場所
+|Public| strValidityPeriod|見積有効期限
+|Public| strRemark                        |記事|
+|Public| strOfficeCode         |事業所コード
+|Public| strOfficeName        |事業所名|
+|Public| strProcessParam    |処理パラメータ
+|Public| strProcessParam_StockManagement|        在庫管理　処理パラメータ
+|Public| strProcessParam_Master|        マスター管理　処理パラメータ|
+|Public| varEDIProcess As Variant|         EDI処理
+|Public| lngID||
+|Public| strFileName||
+|Public| lngParam                 |汎用パラメータ
+|Public| lngParam1               |汎用パラメータ
+|Public| lngParam2               |汎用パラメータ
+|Public| strParam3              |汎用パラメータ
+|Public| strParam             |汎用パラメータ
+|Public| strParam1           |汎用パラメータ
+|Public| strParam2           |汎用パラメータ
+|Public| dateParam               |汎用パラメータ
+|Public| varParam             |汎用パラメータ
+|Public| varNull           |汎用パラメータ|
+|Public| lngLeftPosition||
+|Public| lngTopPosition||
+|Public| lngRed||
+|Public| lngBlack||
+|Public| lngYellow||
+|Public| lngWhite||
 
 ### 4.2 Public定数
 #### 4.2.1 メッセージ用
@@ -389,15 +389,15 @@
 #### 4.2.2 システム定数
 | 種類 | 　　　内　容　| 　説明 |
 |:-----------:|:-----------|:-----------|
-|Global Const |Admin_FLG| 0=一般モード<br> 1=管理者モード（状況IDに依らず各種伝票の変更が可能）
-|Global Const |Com_FLG| 0=基本システム開発（全機能）|
-|Global Const |CS_FLG |  0=運用 <br>  1=試験|
-|Global Const |ERRLog_FLG| 0=エラーログ収集停止<br> 1=エラーログ収集中|
-|Global Const |GCMode_FLG|   0=終了時ガベージコレクション非適用<BR>  1=終了時ガベージコレクション適用|
-|Global Const |lngOfficeNo| 1|
-|Global Const |Log_FLG | 0=ログ収集停止<br> 1=レベル１のログ収集中<br>  2=レベル２のログ収集中<br>   3=レベル３のログ収集中|
-|Global Const |MDE_FLG| 0=MDBファイル <br> 1=MDEファイル|
-|Global Const |SQL_FLG| 0=SQLメッセージの表示停止<br> 1=SQLメッセージの表示|
+|Public Const |Admin_FLG| 0=一般モード<br> 1=管理者モード（状況IDに依らず各種伝票の変更が可能）
+|Public Const |Com_FLG| 0=基本システム開発（全機能）|
+|Public Const |CS_FLG |  0=運用 <br>  1=試験|
+|Public Const |ERRLog_FLG| 0=エラーログ収集停止<br> 1=エラーログ収集中|
+|Public Const |GCMode_FLG|   0=終了時ガベージコレクション非適用<BR>  1=終了時ガベージコレクション適用|
+|Public Const |lngOfficeNo| 1|
+|Public Const |Log_FLG | 0=ログ収集停止<br> 1=レベル１のログ収集中<br>  2=レベル２のログ収集中<br>   3=レベル３のログ収集中|
+|Public Const |MDE_FLG| 0=MDBファイル <br> 1=MDEファイル|
+|Public Const |SQL_FLG| 0=SQLメッセージの表示停止<br> 1=SQLメッセージの表示|
 
 # Appendix
 
