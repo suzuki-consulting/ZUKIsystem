@@ -274,6 +274,10 @@
 |Public| lngOrderSubID           |受注明細番号
 |Public| strCustomerQuotationID    |顧客見積番号|
 |Public| strCustomerOrderID    |顧客注文番号|
+|Public| lngPurchaseOrderID |購入依頼番号
+|Public| lngPurchaseOrderSubID| 購入依頼明細番号|
+|Public| lngPaymentID| 支払番号|
+|Public| lngPaymentSubID| 支払明細番号|
 |Public| lngShippingID             |出荷番号
 |Public| lngShippingSubID|        出荷明細番号|
 |Public| lngBillID|               請求番号|
@@ -281,7 +285,7 @@
 |Public| lngProcessID              |工程ID|
 |Public| lngProductCategoryID    |製品部材区分
 |Public| lngProductID             |品目番号
-|Public| lngPurchaseID            |購入品番号
+|Public| lngPurchaseProductID            |購入品番号
 |Public| lngManufacturingID      |現在未使用20160106
 |Public| lngMaterialID             |材料番号
 |Public| lngWarehouseID           |倉庫番号
@@ -289,7 +293,7 @@
 |Public| lngStockID As Long               |在庫管理番号
 |Public| lngPurchaseCategory    |購入品区分
 |Public| lngTreatmentID           |手配区分
-|Public| strPurchaseOrderID     |購入費用負担区分
+|Public| strPurchaseID     |購入費用負担区分
 |Public| lngStateID            |現在未使用20160106|
 |Public| lngQuantity           |数量|
 |Public| varUnit              |単位
