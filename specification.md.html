@@ -295,7 +295,7 @@ pre.editor-colors .syntax--markdown .syntax--link .syntax--string {
 }
 </style>
   </head>
-  <body class='markdown-preview' data-use-github-style><h1 id="-">設計仕様</h1>
+  <body class='markdown-preview' data-use-github-style><h1 id="-">設計仕様（第１版）</h1>
 <h2 id="1-">1　初めに</h2>
 <p>ＺＵＫＩシステムの設計に必要な内容を以下に記す。</p>
 <h2 id="2-">2　共通関数、サブルーチン</h2>
@@ -777,7 +777,7 @@ pre.editor-colors .syntax--markdown .syntax--link .syntax--string {
 <td style="text-align:center">Func</td>
 <td style="text-align:left">CopyToWorkTable</td>
 <td style="text-align:left">TableName, WorkTableName</td>
-<td style="text-align:left">True/False<br> RecordNumberIsZero</td>
+<td style="text-align:left">True/False<br>RecordNumberIsZero</td>
 <td style="text-align:center">○</td>
 <td style="text-align:left"></td>
 </tr>
@@ -1349,7 +1349,7 @@ pre.editor-colors .syntax--markdown .syntax--link .syntax--string {
 </tbody>
 </table>
 <h2 id="4-">4　共通定義</h2>
-<h3 id="4-1-global-">4.1 Global変数</h3>
+<h3 id="4-1-public-">4.1 Public変数</h3>
 <table>
 <thead>
 <tr>
@@ -1360,708 +1360,743 @@ pre.editor-colors .syntax--markdown .syntax--link .syntax--string {
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strConnectionString</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strFullPathDataSource</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDBType</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strProvider</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDriver</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strServer</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strPath</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDataSource</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strPort</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strUserID</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strPassword</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strImagePath</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDataVersion</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDataVersion_Old</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDataVersion_New</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDataPath</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDataFile</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strPictureFullPath</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strPicturePath</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strPictureFile</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngCnOpenError</td>
 <td style="text-align:left">As Long</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">KeyF</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngMax</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngMaxMain</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngMaxSub</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngCount</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">idx</td>
 <td style="text-align:left">As Long</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">RecordNumberIsZero</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strOption1</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strWhereCond</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strmsg</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">TableName</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">MainTableName</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">SubTableName</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">WorkTableName</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">MainWorkTableName</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">SubWorkTableName</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">WorkTableNameIn</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">WorkTableNameOut</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">WorkTableNameInD</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">WorkTableNameOutD</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">QueryName</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strMainIDName</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strField</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">KeyField</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">KeyFieldMain</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">KeyFieldSub</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">KeyFieldIn</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">KeyFieldOut</td>
 <td style="text-align:left">As String</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngValue</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">varValue</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">KeyValue</td>
 <td style="text-align:left">As Long</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">varKeyValue</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSheetName</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strTitle</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQL</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLEnable</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLEnableIn</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLEnableOut</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLIn</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLOut</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLInD</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLOutD</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngLogInNo</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strLogInName</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strStaffName</td>
 <td style="text-align:left">担当者名</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngMainID</td>
 <td style="text-align:left">管理ID</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngSubID</td>
 <td style="text-align:left">管理明細ID</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngSpecifiedMainID</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngQuotationID</td>
 <td style="text-align:left">見積番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngQuotationSubID</td>
 <td style="text-align:left">見積明細番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngOrderID</td>
 <td style="text-align:left">受注番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngOrderSubID</td>
 <td style="text-align:left">受注明細番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
-<td style="text-align:left">strCustomerQuotationID</td>
-<td style="text-align:left">顧客見積番号</td>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">lngSubconOrderID</td>
+<td style="text-align:left">外注依頼番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
-<td style="text-align:left">strCustomerOrderID</td>
-<td style="text-align:left">顧客注文番号</td>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">lngSubconOrderSubID</td>
+<td style="text-align:left">外注依頼明細番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">lngPurchaseOrderID</td>
+<td style="text-align:left">購入依頼番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">lngPurchaseOrderSubID</td>
+<td style="text-align:left">購入依頼明細番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngShippingID</td>
 <td style="text-align:left">出荷番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngShippingSubID</td>
 <td style="text-align:left">出荷明細番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngBillID</td>
 <td style="text-align:left">請求番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngBillSubID</td>
 <td style="text-align:left">請求明細番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">lngPaymentID</td>
+<td style="text-align:left">支払番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">lngPaymentSubID</td>
+<td style="text-align:left">支払明細番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">strCustomerQuotationID</td>
+<td style="text-align:left">顧客見積番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">strCustomerOrderID</td>
+<td style="text-align:left">顧客注文番号</td>
+</tr>
+<tr>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngProcessID</td>
 <td style="text-align:left">工程ID</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngProductCategoryID</td>
 <td style="text-align:left">製品部材区分</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngProductID</td>
 <td style="text-align:left">品目番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
-<td style="text-align:left">lngPurchaseID</td>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">lngPurchaseProductID</td>
 <td style="text-align:left">購入品番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngManufacturingID</td>
 <td style="text-align:left">現在未使用20160106</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngMaterialID</td>
 <td style="text-align:left">材料番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngWarehouseID</td>
 <td style="text-align:left">倉庫番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strWarehouseName</td>
 <td style="text-align:left">倉庫名</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngStockID As Long</td>
 <td style="text-align:left">在庫管理番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngPurchaseCategory</td>
 <td style="text-align:left">購入品区分</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngTreatmentID</td>
 <td style="text-align:left">手配区分</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
-<td style="text-align:left">strPurchaseOrderID</td>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">strPurchaseID</td>
 <td style="text-align:left">購入費用負担区分</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngStateID</td>
-<td style="text-align:left">現在未使用20160106</td>
+<td style="text-align:left">状況ID</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngQuantity</td>
 <td style="text-align:left">数量</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">varUnit</td>
 <td style="text-align:left">単位</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strUnit</td>
 <td style="text-align:left">単位</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngConsumptionTaxRate As Single</td>
 <td style="text-align:left">消費税率</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngCustomerNo</td>
 <td style="text-align:left">顧客番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strCustomerCode</td>
 <td style="text-align:left">顧客コード</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strCustomerName</td>
 <td style="text-align:left">顧客名</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strCustomerStaffName</td>
 <td style="text-align:left">顧客担当者名</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngSubconID</td>
 <td style="text-align:left">依頼先番号、購入先番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngDestinationNo</td>
 <td style="text-align:left">出荷先番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDestinationCode</td>
 <td style="text-align:left">出荷先コード</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDestinationName</td>
 <td style="text-align:left">出荷先名</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDestinationStaffName</td>
 <td style="text-align:left">出荷先担当者名</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngHinmokuID</td>
 <td style="text-align:left">品目番号</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strHINMEI</td>
 <td style="text-align:left">品目名、品目名</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strHINBAN</td>
 <td style="text-align:left">品目品番</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLSubItems</td>
 <td style="text-align:left">現在未使用20160106</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strSQLSubItemsWithTableName</td>
 <td style="text-align:left">現在未使用20160106</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngOptionID</td>
 <td style="text-align:left">オプション名称ID</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">dateToday</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">dateIssueDate</td>
 <td style="text-align:left">発行日</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">dateOrderDate</td>
 <td style="text-align:left">受注日</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">dateCutoffDate</td>
 <td style="text-align:left">締日</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">dateCustomerDueDate</td>
 <td style="text-align:left">顧客要求納入日</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">dateDueDate</td>
 <td style="text-align:left">納期日</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">dateShippingDate</td>
 <td style="text-align:left">納品日、出荷日</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDeliveryCond</td>
 <td style="text-align:left">納入条件</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strPaymentCond</td>
 <td style="text-align:left">支払条件</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strDeliveryPalce</td>
 <td style="text-align:left">受渡場所</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strValidityPeriod</td>
 <td style="text-align:left">見積有効期限</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strRemark</td>
 <td style="text-align:left">記事</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strOfficeCode</td>
 <td style="text-align:left">事業所コード</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strOfficeName</td>
 <td style="text-align:left">事業所名</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strProcessParam</td>
 <td style="text-align:left">処理パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strProcessParam_StockManagement</td>
 <td style="text-align:left">在庫管理　処理パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strProcessParam_Master</td>
 <td style="text-align:left">マスター管理　処理パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
+<td style="text-align:left">varEDIProcess As Variant</td>
+<td style="text-align:left">EDI処理</td>
+</tr>
+<tr>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngID</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strFileName</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngParam</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngParam1</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngParam2</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strParam3</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strParam</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strParam1</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">strParam2</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">dateParam</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">varParam</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">varNull</td>
 <td style="text-align:left">汎用パラメータ</td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngLeftPosition</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngTopPosition</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngRed</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngBlack</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngYellow</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:center">Global</td>
+<td style="text-align:center">Public</td>
 <td style="text-align:left">lngWhite</td>
 </tr>
 </tbody>
@@ -2256,47 +2291,47 @@ pre.editor-colors .syntax--markdown .syntax--link .syntax--string {
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">Admin_FLG</td>
 <td style="text-align:left">0=一般モード<br> 1=管理者モード（状況IDに依らず各種伝票の変更が可能）</td>
 </tr>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">Com_FLG</td>
 <td style="text-align:left">0=基本システム開発（全機能）</td>
 </tr>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">CS_FLG</td>
 <td style="text-align:left">0=運用 <br>  1=試験</td>
 </tr>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">ERRLog_FLG</td>
 <td style="text-align:left">0=エラーログ収集停止<br> 1=エラーログ収集中</td>
 </tr>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">GCMode_FLG</td>
 <td style="text-align:left">0=終了時ガベージコレクション非適用<br>  1=終了時ガベージコレクション適用</td>
 </tr>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">lngOfficeNo</td>
 <td style="text-align:left">1</td>
 </tr>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">Log_FLG</td>
 <td style="text-align:left">0=ログ収集停止<br> 1=レベル１のログ収集中<br>  2=レベル２のログ収集中<br>   3=レベル３のログ収集中</td>
 </tr>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">MDE_FLG</td>
 <td style="text-align:left">0=MDBファイル <br> 1=MDEファイル</td>
 </tr>
 <tr>
-<td style="text-align:center">Global Const</td>
+<td style="text-align:center">Public Const</td>
 <td style="text-align:left">SQL_FLG</td>
 <td style="text-align:left">0=SQLメッセージの表示停止<br> 1=SQLメッセージの表示</td>
 </tr>
