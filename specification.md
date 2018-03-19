@@ -328,8 +328,10 @@
 |Public| strRemark                        |記事|
 |Public| strOfficeCode         |事業所コード
 |Public| strOfficeName        |事業所名|
-|Public| strProcessParam    |処理パラメータ
-|Public| strProcessParam_StockManagement|        在庫管理　処理パラメータ
+|Public| strProcessParam    |処理パラメータ|
+|Public| strProcessParam_MfgProcess |製造工程分解　処理パラメータ|
+|Public| strProcessParam_Purchase |購入依頼　処理パラメータ|
+|Public| strProcessParam_StockManagement|        在庫管理　処理パラメータ|
 |Public| strProcessParam_Master|        マスター管理　処理パラメータ|
 |Public| varEDIProcess As Variant|         EDI処理
 |Public| lngID||
